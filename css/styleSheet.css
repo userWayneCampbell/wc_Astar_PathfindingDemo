@@ -1,0 +1,242 @@
+* {
+	font-family: arial, verdana;
+	font-size: 10pt;
+}
+
+textarea {
+	font-family: courier;
+	font-size: 8pt;
+}
+
+.table,
+.table td,
+.table th {
+	border: thin solid black;
+	border-collapse: collapse;
+	padding: 2px 2px 2px 2px;
+}
+
+.M {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/M.gif);
+}
+
+.R {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/R.gif);
+}
+
+.f {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/f.gif);
+}
+
+.fo {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/fo.gif);
+}
+
+.h {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/h.gif);
+}
+
+.W {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/W.gif);
+}
+
+.ri {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/ri.gif);
+}
+
+.bard {
+	border-collapse: collapse;
+}
+
+.board td {
+	border-width: 0px;
+}
+
+.manM {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/man.gif);
+}
+
+.manR {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/man.gif);
+}
+
+.manf {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/man.gif);
+}
+
+.manfo {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/man.gif);
+}
+
+.manh {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/man.gif);
+}
+
+.manW {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/man.gif);
+}
+
+.manri {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/man.gif);
+}
+
+.fadeM {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/Mfade.gif);
+}
+
+.fadeR {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/Rfade.gif);
+}
+
+.fadef {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/ffade.gif);
+}
+
+.fadefo {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/fofade.gif);
+}
+
+.fadeh {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/hfade.gif);
+}
+
+.fadeW {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/Wfade.gif);
+}
+
+.faderi {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/rifade.gif);
+}
+
+.goalM {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/goal.gif);
+}
+
+.goalR {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/goal.gif);
+}
+
+.goalf {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/goal.gif);
+}
+
+.goalfo {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/goal.gif);
+}
+
+.goalh {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/goal.gif);
+}
+
+.goalW {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/goal.gif);
+}
+
+.goalri {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/goal.gif);
+}
+
+.visitedM {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/Mvisited.gif);
+}
+
+.visitedR {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/Rvisited.gif);
+}
+
+.visitedf {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/fvisited.gif);
+}
+
+.visitedfo {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/fovisited.gif);
+}
+
+.visitedh {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/hvisited.gif);
+}
+
+.visitedW {
+	width: 16px;
+	height: 16px;
+	background-image: url(../Images/Wvisited.gif);
+}
+
+.visitedri {
+	width: 16px;
+	height: 16px;
+	background-image: url(Images/rivisited.gif);
+}
+
+.Graphs {
+	background-color: #d3d3d3;
+	padding: 2px 7px 2px 2px;
+	border-style: solid;
+	border-width: 1px;
+}
