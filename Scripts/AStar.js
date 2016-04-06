@@ -10,6 +10,7 @@
   var SEARCH_TYPE_ASTAR = 3;
 
   var heuristicType;
+	var classTypeObject;
   var Graph;
   var GraphSearch;
   var binaryHeap;
@@ -75,6 +76,8 @@
 
     var deepest = 0;
 
+
+		classTypeObject = document.forms[0].elements["classTypes"][document.forms[0].elements["classTypes"].selectedIndex].value;
     heuristicType = document.forms[0].elements["heur"][document.forms[0].elements["heur"].selectedIndex].value;
 
     GraphSearch[pX][pY].visited = new Array();
@@ -154,8 +157,8 @@
 
   /* if the given node is valid, and has not already been visited along the current path, then push it onto the search queue. */
   function pushValidNode(queue, GraphSearch, parent, x, y) {
-    //Don't push array out of bounds, don't use water (W)
-    if (x >= 0 && x < width && y >= 0 && y < height && GraphSearch[x][y].feature != "W") {
+    //Don't push array out of bounds
+    if (x >= 0 && x < width && y >= 0 && y < height) {
       //Already visited?
       if (!isVisited(parent, x, y)) {
         var item = {
@@ -227,25 +230,31 @@
 
     var gx = Number(goal[0]);
     var gy = Number(goal[1]);
+
+		var classType = getClassType(classTypeObject);
+
     switch (node.feature) {
       case "R":
-        c = 1;
+        c = classType.R;
         break;
       case "f":
-        c = 2;
+        c = classType.f;
         break;
       case "F":
-        c = 4;
+        c = classType.F;
         break;
       case "h":
-        c = 5;
+        c = classType.h;
         break;
       case "r":
-        c = 7;
+        c = classType.r;
         break;
       case "M":
-        c = 10;
+        c = classType.M;
         break;
+		  case "W":
+	      c = classType.W;
+	      break;
       default:
         c = 999999;
     }

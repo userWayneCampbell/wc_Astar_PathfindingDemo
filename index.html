@@ -13,13 +13,14 @@ References include:
 <head>
 	<script src="Scripts/AStar.js"></script>
 	<script src="Scripts/Map.js"></script>
+	<script src="Scripts/class.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/styleSheet.css" />
 </head>
 
 <body onkeypress="return keypress(event)" onload="wc_loadArrayGraph(0)">
   <h1>Programming Project 1: A* Pathfinding - Wayne Campbell, Bryce Gray</h1>
 	<p>All Graphics are from the Ultima IV - Sega</p>
-  <p>
+  <p> Choose your class:
     <form>
       <table border="0">
         <tr valign="top">
@@ -64,6 +65,13 @@ References include:
               <option value="0">Manhattan distance</option>
               <option value="1">Euclidian distance</option>
             </select> heuristic.
+					 </br>
+					 Choose a type:
+						<select name="classTypes">
+							<option value="0">Bird</option>
+							<option value="1">Caravan</option>
+							<option value="2">Regular</option>
+						</select>
             <br>
             <div id="results"></div>
           </td>
