@@ -9,6 +9,21 @@ function getClassType(){
 		return getClassRegular();
 	}
 }
+
+function wc_loadClassValues(){
+	var regular = getClassRegular();
+	var caravan = getClassCaravan();
+	var bird = getClassBird();
+		var string = 'Name, Road, Field, Forest, Hill, River, Mountain, Deep Water \n';
+					string += wc_getObjectValues(regular);
+					string += wc_getObjectValues(caravan);
+					string += wc_getObjectValues(bird);
+	window.alert(string);
+}
+
+function wc_getObjectValues(obj){
+	return obj.Name + ' ' + String(obj.R) + ' ' + String(obj.f) + ' ' + String(obj.F) + ' ' + String(obj.h) + ' ' + String(obj.r) + ' ' + String(obj.M) + ' ' + String(obj.W) + "\n";
+}
 /*
 		R = Road,
 		f = field,
@@ -50,11 +65,11 @@ function getClassCaravan(){
 	var obj = {
 					Name: "Caravan",
 	        R: 1,
-	        f: 2,
+	        f: 5,
 	        F: 20,
 					h: 20,
-					r: 7,
-					M: 10,
+					r: 10,
+					M: 15,
 					W: 999999
 	    };
 	    return obj;
