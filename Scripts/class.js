@@ -65,7 +65,7 @@ function getClassCaravan(){
 	var obj = {
 					Name: "Caravan",
 	        R: 1,
-	        f: 5,
+	        f: 20,
 	        F: 20,
 					h: 20,
 					r: 10,

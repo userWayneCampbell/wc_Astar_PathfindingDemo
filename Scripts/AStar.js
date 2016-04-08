@@ -4,9 +4,6 @@
   var VISITED = 3;
   var REALPATH = 4;
 
-  var SEARCH_TYPE_BFS = 0;
-  var SEARCH_TYPE_DFS = 1;
-  var SEARCH_TYPE_UCS = 2;
   var SEARCH_TYPE_ASTAR = 3;
 
   var heuristicType;
@@ -39,8 +36,7 @@
   }
 
   /*
-	Actualy algorithm: Pseudocode:
-
+	Does the A* algorthm
    */
   function wc_AStarSearch() {
     wc_startTiming();
@@ -51,6 +47,7 @@
     GraphSearch = new Array();
     for (var x = 0; x < width; x++) GraphSearch[x] = new Array();
 
+		//Fill graph
     for (var x = 0; x < width; x++)
       for (var y = 0; y < height; y++) {
         GraphSearch[x][y] = {
@@ -76,7 +73,7 @@
 
     var deepest = 0;
 
-
+		//Options using checkboxs
 		classTypeObject = document.forms[0].elements["classTypes"][document.forms[0].elements["classTypes"].selectedIndex].value;
     heuristicType = document.forms[0].elements["heur"][document.forms[0].elements["heur"].selectedIndex].value;
 
@@ -97,7 +94,7 @@
 			//Replece with real cost
       if (node.parent) {
 				//condition ? value of true : value of false) + (cost of position with heauristic)
-        node.cost = Number(node.parent ? node.parent.cost : 0) + cost(node.x, node.y, false);
+        node.cost = Number(node.parent ? node.parent.cost : 0) + wc_findCost(node.x, node.y, false);
       }
 
       // if bestCost = null, set as current. If bestcost = > current node cost, set as bestCost;
@@ -126,17 +123,17 @@
 
       //Didn't find goal
       /* try to expand all the possible child nodes from here. */
-      pushValidNode(queue, GraphSearch, node, node.x - 1, node.y); // left
-      pushValidNode(queue, GraphSearch, node, node.x + 1, node.y); // right
-      pushValidNode(queue, GraphSearch, node, node.x, node.y - 1); // up
-      pushValidNode(queue, GraphSearch, node, node.x, node.y + 1); // down
+      wc_tryPushNodeParent(queue, GraphSearch, node, node.x - 1, node.y); // left
+      wc_tryPushNodeParent(queue, GraphSearch, node, node.x + 1, node.y); // right
+      wc_tryPushNodeParent(queue, GraphSearch, node, node.x, node.y - 1); // up
+      wc_tryPushNodeParent(queue, GraphSearch, node, node.x, node.y + 1); // down
 
       //Search Diagonals if selected
       if (document.forms[0].elements["allowDiagonal"].checked) {
-        pushValidNode(queue, GraphSearch, node, node.x - 1, node.y - 1);
-        pushValidNode(queue, GraphSearch, node, node.x + 1, node.y - 1);
-        pushValidNode(queue, GraphSearch, node, node.x - 1, node.y + 1);
-        pushValidNode(queue, GraphSearch, node, node.x + 1, node.y + 1);
+        wc_tryPushNodeParent(queue, GraphSearch, node, node.x - 1, node.y - 1);
+        wc_tryPushNodeParent(queue, GraphSearch, node, node.x + 1, node.y - 1);
+        wc_tryPushNodeParent(queue, GraphSearch, node, node.x - 1, node.y + 1);
+        wc_tryPushNodeParent(queue, GraphSearch, node, node.x + 1, node.y + 1);
       }
 			//Mark visited
 			if (document.forms[0].elements["trackVisited"].checked) {
@@ -151,24 +148,25 @@
       alert("Sorry, goal cannot be reached.");
       return;
     }
-    displayAllNodeResults(steps, skipped, node, GraphSearch, deepest);
+    wc_displayAllNodeResults(steps, skipped, node, GraphSearch, deepest);
 
   }
 
-  /* if the given node is valid, and has not already been visited along the current path, then push it onto the search queue. */
-  function pushValidNode(queue, GraphSearch, parent, x, y) {
+	//If the node is valid, then push into the heap queue
+  function wc_tryPushNodeParent(queue, GraphSearch, parent, x, y) {
     //Don't push array out of bounds
     if (x >= 0 && x < width && y >= 0 && y < height) {
-      //Already visited?
+      //Already visited, then set the cost as the parent cost + the A* Cost
       if (!isVisited(parent, x, y)) {
         var item = {
           "x": x,
           "y": y,
           "state": OPENED,
-          "cost": parent.cost + cost(x, y),
+          "cost": parent.cost + wc_findCost(x, y),
           "parent": parent,
           "depth": parent.depth + 1
         };
+				//Add to heap
         heapAdd(item);
       }
     }
@@ -184,8 +182,8 @@
     }
   }
 
-  /* display all the search results on the Graph and in the results area of the page. */
-  function displayAllNodeResults(steps, skipped, node, GraphSearch, deepest) {
+	//Display all the resutlts of the grahp and the results are of the page
+  function wc_displayAllNodeResults(steps, skipped, node, GraphSearch, deepest) {
     var p = "";
 
     var parent = node;
@@ -221,7 +219,7 @@
   }
 
   //return the actual cost of the aSTAR terrain cost
-  function cost(x, y, astar) {
+  function wc_findCost(x, y, astar) {
     if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
       return 0
     };
@@ -279,11 +277,12 @@
     return Math.round(count / (height * width) * 100);
   }
 
-  /* write the results to the screen */
+  //Write Results to scren
   function results(msg) {
     document.getElementById("results").innerHTML += msg;
   }
 
+  //Clear reutls from screen
   function clearAllOldResults() {
     document.getElementById("results").innerHTML = "";
   }
