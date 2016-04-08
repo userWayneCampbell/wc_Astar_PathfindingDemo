@@ -117,28 +117,28 @@
   var Graphs = new Array();
   Graphs[0] =
     "15 20\n" +
-    "12 0\n" +
+    "4 0\n" +
     "7 18\n" +
-    "MMMhhffffffffff\n" +
-    "MMMMMhhffffffff\n" +
-    "hMMMhhhffFFFfff\n" +
-    "fhMhffFFFFFFFff\n" +
-    "fhhhffFFFFFFFFF\n" +
+    "ffffffffffhhMMM\n" +
+    "ffffffffhhMMMMM\n" +
+    "fffFFFffhhhMMMh\n" +
+    "ffFFFFFFFffhMhf\n" +
+    "FFFFFFFFFffhhhf\n" +
     "ffffFFFFFFFFfff\n" +
-    "rrrrfFFFFFFffff\n" +
-    "fffrrffFFFfffff\n" +
-    "RRffrrrfFFFFfff\n" +
-    "fRffffrFFFFFFff\n" +
-    "fRfffWWWWWFFFFF\n" +
-    "fRffWWWWWWWWFFF\n" +
+    "fffFFFFFFFFffff\n" +
+    "fffffFFFffrrfff\n" +
+    "fffFFFFfrrrffRf\n" +
+    "ffFFFFFFrffffRf\n" +
+    "FFFFFWWWWWfffRf\n" +
+    "FFFWWWWWWWWffRf\n" +
     "fRRfffWWWWWWWrr\n" +
-    "ffRRRRffffWWfff\n" +
+    "rrWWWWWWWfffRRf\n" +
     "fffffRRRfffffff\n" +
-    "fffffffRfffffff\n" +
-    "hffffffRRRRRRRR\n" +
-    "Mhhffffffffffff\n" +
-    "Mhhffffffffffff\n" +
-    "MMhhhffffffffff\n";
+    "fffffffRRRfffff\n" +
+    "RRRRRRRRffffffh\n" +
+    "ffffffffffffhhM\n" +
+    "ffffffffffffhhM\n" +
+    "ffffffffffhhhMM\n";
 
 	Graphs[1]	= "30 20\n" +
 	"15 5\n" +
