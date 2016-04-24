@@ -164,10 +164,34 @@
 	"MhhffffffffffffffFFFFFFFFFFFff\n" +
 	"MMhhhfffffffffffffFFFFFFFFFFFf\n";
 
+	Graphs[2]	= "30 20\n" +
+	"15 5\n" +
+	"15 15\n" +
+	"MMMMMMMMMhhfffffffffffFFFMMMMM\n" +
+	"MMMMMMMMhhffffffffffffffFFFMMM\n" +
+	"hMMMMhhffFFFfffffffffffffFFFFF\n" +
+	"fhMhffFFFFFFFfffffffffffffFFFF\n" +
+	"fhhhffFFFFFFFFfffffffWWWWWFFFF\n" +
+	"ffffFFFFFFFFffffffffWWWWffffff\n" +
+	"rrrrrFFFFFFffffffffWWWWfffffff\n" +
+	"hhffrffFFFfffWWWWWWWWWWWffffff\n" +
+	"RRRRrrWWWWWWWWWWWWWWWWffffffff\n" +
+	"WWWWWWWWWWWWWWWWWWWWrrrrrfffff\n" +
+	"WWWWWWWWWWWWWWWfffffffffrrrfff\n" +
+	"RRRRWWWWWWWWFFFfffffffffffrrrr\n" +
+	"hhffffWWWWWWWFFfffffffffffffFF\n" +
+	"ffffffffffWWfffffffffffffffFFF\n" +
+	"fffffffffffffffffffffffFFFFFFF\n" +
+	"fffffffffffffffffffFFFFFFFFFFF\n" +
+	"hffffffffffffffffffFFFFFFFFFFF\n" +
+	"MhhfffffffffffffFFFFFFFFFFFfff\n" +
+	"MhhffffffffffffffFFFFFFFFFFFff\n" +
+	"MMhhhfffffffffffffFFFFFFFFFFFf\n";
+
 
   /* load and render the preset Graph indicated by num */
   function wc_loadArrayGraph(num) {
     clearAllOldResults();
     document.forms[0].elements["Graph"].value = Graphs[num];
-    wc_loadGraph();
+    wc_loadGraph(1);
   }
