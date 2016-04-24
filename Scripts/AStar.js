@@ -164,7 +164,7 @@
           "y": y,
           "state": OPENED,
           "cost": parent.cost + wc_findCost(x, y),
-           "mapCost": parent.cost + bg_findMapCost(x, y),
+          "mapCost": parent.mapCost + bg_findMapCost(x, y),
           "parent": parent,
           "depth": parent.depth + 1
         };
