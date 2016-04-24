@@ -124,18 +124,18 @@
     "fffFFFffhhhMMMh\n" +
     "ffFFFFFFFffhMhf\n" +
     "FFFFFFFFFffhhhf\n" +
-    "ffffFFFFFFFFfff\n" +
-    "fffFFFFFFFFffff\n" +
-    "fffffFFFffrrfff\n" +
+    "ffffMMFFFFFFfff\n" +
+    "fffFFMMFFFFffff\n" +
+    "ffffFMMFffrrfff\n" +
     "fffFFFFfrrrffRf\n" +
     "ffFFFFFFrffffRf\n" +
     "FFFFFWWWWWfffRf\n" +
     "FFFWWWWWWWWffRf\n" +
     "fRRfffWWWWWWWrr\n" +
     "rrWWWWWWWfffRRf\n" +
-    "fffffRRRfffffff\n" +
-    "fffffffRRRfffff\n" +
-    "RRRRRRRRffffffh\n" +
+    "ffffRRRRfffffff\n" +
+    "ffffRffRRRfffff\n" +
+    "ffffRRRRffffffh\n" +
     "ffffffffffffhhM\n" +
     "ffffffffffffhhM\n" +
     "ffffffffffhhhMM\n";
