@@ -212,7 +212,7 @@
     results("Explored <b>" + visitCount + "</b> grid squares (<b>" + (height * width - visitCount) + "</b> unexplored).<br>");
     results("Path: <b>" + (count) + "</b> grid squares.<br>");
     results("Cost: <b>" + (node.cost) + "</b>.<br>");
-    results("Map Cost: <b>" + (node.cost) + "</b>.<br>");
+    results("Map Cost: <b>" + (node.mapCost) + "</b>.<br>");
     results("The deepest node visited had depth <b>" + deepest + "</b>.<br>");
     results("The search took <b>" + ((endTime.getTime() - startTime.getTime()) / 1000) + "</b> seconds.<br>")
     results("path: " + p + "<br>");
