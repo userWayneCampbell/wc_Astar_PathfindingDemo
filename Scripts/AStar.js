@@ -57,6 +57,7 @@
           "state": INIT,
           "path": new Array(),
           "cost": 0,
+          "mapCost": 0,
           "parent": null,
           "depth": 0,
           "bestCost": null
@@ -163,6 +164,7 @@
           "y": y,
           "state": OPENED,
           "cost": parent.cost + wc_findCost(x, y),
+          "mapCost": parent.mapCost + bg_findMapCost(x, y),
           "parent": parent,
           "depth": parent.depth + 1
         };
@@ -210,6 +212,7 @@
     results("Explored <b>" + visitCount + "</b> grid squares (<b>" + (height * width - visitCount) + "</b> unexplored).<br>");
     results("Path: <b>" + (count) + "</b> grid squares.<br>");
     results("Cost: <b>" + (node.cost) + "</b>.<br>");
+    results("Map Cost: <b>" + (node.mapCost) + "</b>.<br>");
     results("The deepest node visited had depth <b>" + deepest + "</b>.<br>");
     results("The search took <b>" + ((endTime.getTime() - startTime.getTime()) / 1000) + "</b> seconds.<br>")
     results("path: " + p + "<br>");
@@ -267,6 +270,45 @@
     return c;
   }
 
+function bg_findMapCost(x, y, astar) {
+    if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
+      return 0
+    };
+    var c;
+    var node = GraphSearch[x][y];
+
+    var gx = Number(goal[0]);
+    var gy = Number(goal[1]);
+
+		var classType = getClassType(classTypeObject);
+
+    switch (node.feature) {
+      case "R":
+        c = classType.R;
+        break;
+      case "f":
+        c = classType.f;
+        break;
+      case "F":
+        c = classType.F;
+        break;
+      case "h":
+        c = classType.h;
+        break;
+      case "r":
+        c = classType.r;
+        break;
+      case "M":
+        c = classType.M;
+        break;
+		  case "W":
+	      c = classType.W;
+	      break;
+      default:
+        c = 999999;
+    }
+    return c;
+    }
   //Total Number of nodes visited
   function countVisited(GraphSearch) {
     var count = 0;
